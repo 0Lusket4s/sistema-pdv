@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once 'conexao.php';
+echo 'Sessão criada: ' . $_SESSION['usuario'];
+exit();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
