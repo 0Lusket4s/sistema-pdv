@@ -22,16 +22,32 @@ if (isset($_COOKIE['usuario'])) {
       height: 100vh;
     }
     .login-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background: #a8c2e6;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 0 10px #00000033;
     }
+    form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     input {
-      display: block;
-      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px 0px;
       padding: 8px;
       width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+
+
     }
     button {
       background-color: #004aad;
@@ -40,6 +56,12 @@ if (isset($_COOKIE['usuario'])) {
       border: none;
       width: 100%;
       border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #003a8c;
+      transition: 0.3s;
     }
   </style>
 </head>
