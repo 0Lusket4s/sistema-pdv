@@ -39,7 +39,7 @@
 <body>
   <div class="login-container">
     <h2>Acesso ao PDV</h2>
-    <form method="POST" action="/verificarLogin.php">
+    <form method="POST" action="/api/verificarLogin.php">
       <input type="text" name="usuario" placeholder="Usuário" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <button type="submit">Entrar</button>
