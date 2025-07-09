@@ -1,6 +1,6 @@
 <?php
 $host = 'mysql-sistema-pdv.alwaysdata.net';
-$dbname = 'sistema_pdv';
+$dbname = 'sistema-pdv_sistema-pdv';
 $usuario = '422099';
 $senha = 'lucascarvalho';
 
