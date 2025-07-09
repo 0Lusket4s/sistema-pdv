@@ -27,6 +27,8 @@ if (!isset($_COOKIE['usuario'])) {
     }
     .menu {
       display: grid;
+      margin-left: auto;
+      margin-right: auto;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
       margin-top: 30px;
@@ -63,7 +65,7 @@ if (!isset($_COOKIE['usuario'])) {
     <a href="pdv.php">🛒 Iniciar Venda (PDV)</a>
     <a href="cadastrarCliente.php">👤 Cadastrar Cliente</a>
     <a href="cadastrarProduto.php">🍔 Cadastrar Produto</a>
-    <a href="relatorio.php">📊 Relatórios</a>
+    <a href="relatorio.php" style="position: relative; left: 240px;">📊 Relatórios</a>
   </div>
 
   <a href="logout.php" class="sair">Sair do Sistema</a>
