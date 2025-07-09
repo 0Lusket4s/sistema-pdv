@@ -15,6 +15,9 @@ if (!isset($_COOKIE['usuario'])) {
   <title>Menu Principal - PDV</title>
   <style>
     body {
+      margin: auto;
+      display: flex;
+      justify-content: center;
       font-family: Arial;
       background-color: #a8c2e6;
       display: flex;
