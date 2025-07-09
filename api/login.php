@@ -1,4 +1,11 @@
-<?php session_start(); if (isset($_SESSION['usuario'])) { header('Location: dashboard.php'); exit(); } ?>
+<?php 
+session_start(); 
+if (isset($_COOKIE['usuario'])) {
+    header('Location: dashboard.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
