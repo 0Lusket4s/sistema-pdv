@@ -1,9 +1,9 @@
 <?php
 require_once 'conexao.php';
 
-$usuario = "admin";
+$usuario = "david";
 $nome = "Administrador";
-$senha = "123456";
+$senha = "123";
 $nivel = "Administrador";
 
 $stmt = $pdo->prepare("INSERT INTO usuarios (nome, usuario, senha, nivel_acesso) VALUES (:nome, :usuario, :senha, :nivel)");
