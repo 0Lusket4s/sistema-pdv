@@ -86,6 +86,6 @@ $produtos = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
     <?php endforeach; ?>
   </table>
 
-  <a href="pdv.php">← Voltar ao PDV</a>
+  <a href="dashboard.php">← Voltar ao PDV</a>
 </body>
 </html>
