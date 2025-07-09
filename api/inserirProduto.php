@@ -1,5 +1,5 @@
 <?php
-require_once '../conexao.php';
+require_once 'conexao.php';
 
 $nome = $_POST['nomeProduto'];
 $descricao = $_POST['descricaoProduto'];
@@ -20,7 +20,7 @@ try {
         ':categoria' => $categoria
     ]);
 
-    echo "Produto cadastrado com sucesso! <a href='../../cadastrarProduto.php'>Voltar</a>";
+    echo "Produto cadastrado com sucesso! <a href='cadastrarProduto.php'>Voltar</a>";
 
 } catch (PDOException $e) {
     echo "Erro ao cadastrar produto: " . $e->getMessage();
