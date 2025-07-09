@@ -1,6 +1,4 @@
 <?php
-echo "Sessão iniciada para: " . $_SESSION['usuario'];
-exit();
 session_start();
 require_once 'conexao.php';
 
