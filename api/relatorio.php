@@ -45,6 +45,21 @@ $produtos = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
       color: #004aad;
       text-decoration: none;
     }
+    .sair{ 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 200px;
+      margin-top: 20px;
+      background-color: #004aad;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 6px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
 <body>
@@ -86,6 +101,6 @@ $produtos = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
     <?php endforeach; ?>
   </table>
 
-  <a href="dashboard.php">← Voltar ao Inicio</a>
+  <a href="dashboard.php" class="sair">← Voltar ao Inicio</a>
 </body>
 </html>
