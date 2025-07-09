@@ -1,5 +1,5 @@
 <?php
-require_once '../conexao.php';
+require_once 'conexao.php';
 
 $nome = $_POST['nomeCliente'];
 $telefone = $_POST['telefoneCliente'];
@@ -22,7 +22,7 @@ try {
         ':data' => $dataCadastro
     ]);
 
-    echo "Cliente cadastrado com sucesso! <a href='../../cadastrarCliente.php'>Voltar</a>";
+    echo "Cliente cadastrado com sucesso! <a href='cadastrarCliente.php'>Voltar</a>";
 
 } catch (PDOException $e) {
     echo "Erro ao cadastrar cliente: " . $e->getMessage();
