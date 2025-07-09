@@ -1,7 +1,7 @@
 <?php
 require_once 'conexao.php';
 
-$usuario = "david";
+$usuario = "lucas";
 $nome = "Administrador";
 $senha = "123";
 $nivel = "Administrador";
