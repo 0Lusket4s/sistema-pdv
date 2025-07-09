@@ -1,9 +1,13 @@
 <?php
+
 session_start();
+var_dump($_SESSION);
+exit();
 if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
