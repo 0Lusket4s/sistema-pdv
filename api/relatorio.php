@@ -1,5 +1,5 @@
 <?php
-require_once '../conexao.php';
+require_once 'conexao.php';
 
 $stmtVendas = $pdo->query("SELECT v.id, v.data_venda, v.valor_total, v.formas_pagamento, c.nome
                             FROM vendas v
