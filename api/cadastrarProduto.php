@@ -5,11 +5,13 @@
   <title>Cadastro de Produto</title>
   <style>
     body {
+      margin: auto 0;
       font-family: Arial;
       background-color: #CBCBCB;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       height: 100vh;
     }
     form {
@@ -17,6 +19,10 @@
       padding: 25px;
       border-radius: 10px;
       box-shadow: 0 0 10px #00000022;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
     input, select, textarea {
       display: block;
@@ -31,6 +37,18 @@
       width: 100%;
       border: none;
       border-radius: 8px;
+    }
+.sair{ 
+      height: 30px;
+      margin-top: 20px;
+      background-color: #004aad;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      text-align: center;      
     }
   </style>
 </head>
@@ -49,5 +67,8 @@
     </select>
     <button type="submit">Cadastrar Produto</button>
   </form>
+
+    <a href="dashboard.php" class="sair">Voltar ao Menu Principal</a>
+
 </body>
 </html>
