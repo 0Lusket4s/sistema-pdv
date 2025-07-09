@@ -19,9 +19,19 @@ $clientes = $stmtClientes->fetchAll(PDO::FETCH_ASSOC);
     body {
       font-family: Arial;
       background-color: #f0f0f0;
-      display: flex;
       gap: 20px;
       padding: 30px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .principal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+      width: 150vh;
+      margin: auto;
     }
     .produtos, .carrinho {
       flex: 1;
@@ -29,6 +39,7 @@ $clientes = $stmtClientes->fetchAll(PDO::FETCH_ASSOC);
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 0 8px #00000022;
+      width: 100%;
     }
     .produto {
       border: 1px solid #ccc;
@@ -56,45 +67,61 @@ $clientes = $stmtClientes->fetchAll(PDO::FETCH_ASSOC);
       justify-content: space-between;
       margin-bottom: 6px;
     }
+    .sair{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 200px;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      border-radius: 6px;
+      background-color: #004aad;
+      color: white;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <div class="produtos">
-    <h2>Cardápio</h2>
-    <?php foreach ($produtos as $produto): ?>
-      <div class="produto">
-        <h4><?= $produto['nomeProduto'] ?></h4>
-        <p>R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
-        <button onclick='adicionarCarrinho(<?= json_encode($produto) ?>)'>Adicionar</button>
-      </div>
-    <?php endforeach; ?>
+  <div class="principal">
+    <div class="produtos">
+      <h2>Cardápio</h2>
+      <?php foreach ($produtos as $produto): ?>
+        <div class="produto">
+          <h4><?= $produto['nomeProduto'] ?></h4>
+          <p>R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
+          <button onclick='adicionarCarrinho(<?= json_encode($produto) ?>)'>Adicionar</button>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+    <div class="carrinho">
+      <h2>Carrinho</h2>
+      <ul id="listaCarrinho"></ul>
+      <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+
+      <form action="finalizarVenda.php" method="POST" onsubmit="return enviarCarrinho()">
+        <input type="hidden" name="itens" id="itensInput">
+        <label>Cliente:</label>
+        <select name="cliente_id" required>
+          <option value="">Selecione o cliente</option>
+          <?php foreach ($clientes as $cliente): ?>
+            <option value="<?= $cliente['id'] ?>"><?= $cliente['nome'] ?></option>
+          <?php endforeach; ?>
+        </select>
+        <label>Forma de pagamento:</label>
+        <select name="formaPagamento" required>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão">Cartão</option>
+          <option value="Pix">Pix</option>
+        </select>
+        <br><br>
+        <button type="submit">Finalizar Pedido</button>
+      </form>
+    </div>
   </div>
-
-  <div class="carrinho">
-    <h2>Carrinho</h2>
-    <ul id="listaCarrinho"></ul>
-    <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
-
-    <form action="finalizarVenda.php" method="POST" onsubmit="return enviarCarrinho()">
-      <input type="hidden" name="itens" id="itensInput">
-      <label>Cliente:</label>
-      <select name="cliente_id" required>
-        <option value="">Selecione o cliente</option>
-        <?php foreach ($clientes as $cliente): ?>
-          <option value="<?= $cliente['id'] ?>"><?= $cliente['nome'] ?></option>
-        <?php endforeach; ?>
-      </select>
-      <label>Forma de pagamento:</label>
-      <select name="formaPagamento" required>
-        <option value="Dinheiro">Dinheiro</option>
-        <option value="Cartão">Cartão</option>
-        <option value="Pix">Pix</option>
-      </select>
-      <br><br>
-      <button type="submit">Finalizar Pedido</button>
-    </form>
-  </div>
-
   <script>
     let carrinho = [];
 
@@ -135,5 +162,7 @@ $clientes = $stmtClientes->fetchAll(PDO::FETCH_ASSOC);
       return true;
     }
   </script>
+
+  <a href="dashboard.php" class="sair">Voltar ao Menu Principal</a>
 </body>
 </html>
