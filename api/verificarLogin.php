@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../conexao.php';
+require_once 'conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($senha, $dados['senha'])) {
             $_SESSION['usuario'] = $dados['usuario'];
             $_SESSION['nivel'] = $dados['nivel_acesso'];
-            header('Location: /dashboard.php');
+            header('Location: dashboard.php');
             exit();
         } else {
             echo "Senha incorreta.";
@@ -25,6 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Usuário não encontrado.";
     }
 } else {
-    header("Location: /login.php");
+    header("Location: login.php");
 }
 ?>
