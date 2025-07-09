@@ -1,5 +1,5 @@
 <?php
-require_once '../conexao.php';
+require_once 'conexao.php';
 
 $itensJson = $_POST['itens'];
 $formaPagamento = $_POST['formaPagamento'];
@@ -34,7 +34,7 @@ try {
             ->execute([':id' => $item['id']]);
     }
 
-    echo "Pedido finalizado com sucesso! <a href='../../pdv.php'>Voltar</a>";
+    echo "Pedido finalizado com sucesso! <a href='pdv.php'>Voltar</a>";
 
 } catch (PDOException $e) {
     echo "Erro ao finalizar pedido: " . $e->getMessage();
