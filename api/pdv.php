@@ -1,5 +1,5 @@
 <?php
-require_once '../conexao.php';
+require_once 'conexao.php';
 
 // Buscar produtos
 $stmt = $pdo->query("SELECT * FROM produtos");
@@ -75,7 +75,7 @@ $clientes = $stmtClientes->fetchAll(PDO::FETCH_ASSOC);
     <ul id="listaCarrinho"></ul>
     <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
 
-    <form action="../finalizarVenda.php" method="POST" onsubmit="return enviarCarrinho()">
+    <form action="finalizarVenda.php" method="POST" onsubmit="return enviarCarrinho()">
       <input type="hidden" name="itens" id="itensInput">
       <label>Cliente:</label>
       <select name="cliente_id" required>
