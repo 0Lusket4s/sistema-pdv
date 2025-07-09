@@ -35,7 +35,7 @@
   </style>
 </head>
 <body>
-  <form action="../inserirProduto.php" method="POST">
+  <form action="inserirProduto.php" method="POST">
     <h2>Cadastro de Produto</h2>
     <input type="text" name="nomeProduto" placeholder="Nome do Produto" required>
     <textarea name="descricaoProduto" placeholder="Descrição" required></textarea>
