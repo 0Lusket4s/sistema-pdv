@@ -1,8 +1,7 @@
 <?php
 session_start();
 require_once 'conexao.php';
-echo 'Sessão criada: ' . $_SESSION['usuario'];
-exit();
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
@@ -16,8 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $dados = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (password_verify($senha, $dados['senha'])) {
-            $_SESSION['usuario'] = $dados['usuario'];
-            $_SESSION['nivel'] = $dados['nivel_acesso'];
+            setcookie('usuario', $dados['usuario'], time() + 3600, '/');
+setcookie('nivel', $dados['nivel_acesso'], time() + 3600, '/');
+
             header('Location: dashboard.php');
             exit();
         } else {
