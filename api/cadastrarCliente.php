@@ -53,7 +53,7 @@
   </style>
 </head>
 <body>
-  <form action="api/inserirCliente.php" method="POST">
+  <form action="inserirCliente.php" method="POST">
     <h2>Cadastro de Cliente</h2>
     <input type="text" name="nomeCliente" placeholder="Nome completo" required>
     <input type="text" name="telefoneCliente" placeholder="Telefone" required>
