@@ -1,23 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema PDV - Lanchonete</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <h1>Bem-Vindo ao Sistema de PDV</h1>
-    <a href="api/login.php"></a> </br>
-    <a href="api/cadastrarUsuario2.php"></a>
+  <div class="container">
+    <h1>Bem-vindo ao<br><span>Sistema PDV de Lanchonete</span></h1>
+    <a href="api/login.php" class="btn">Entrar</a>
+  </div>
 </body>
 <style>
-    a {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color:#dbb4ad;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ffffff, #cecdcd);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  background: rgba(102, 100, 100, 0.25);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.container h1 span {
+  color: #136de2a8;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  background-color: rgba(70, 67, 85, 0.25);
+  color: #000000;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid #5051523d;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #136de2a8;
+  color: #000;
+  transform: scale(1.05);
+}
+
 </style>
 </html>
